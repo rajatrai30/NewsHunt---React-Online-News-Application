@@ -3,13 +3,12 @@ import {
   Link
 } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = (props) => {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg bg-light" style={{
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} style={{
         backgroundColor: "#3e96e3 !important",
-        'boxShadow': '0 2px 8px 0 rgb(0 0 0)',
-        color: 'white !important'
+        'boxShadow': '0 2px 8px 0 rgb(0 0 0)'
       }}>
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">NewsHunt</Link>
@@ -28,6 +27,12 @@ const Navigation = () => {
               <li className="nav-item"><Link className="nav-link active" to="/sports">Sports</Link> </li>
               <li className="nav-item"><Link className="nav-link active" to="/technology">Technology</Link> </li>
             </ul>
+
+            <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+            {/* eslint-disable-next-line */}
+            <input className="form-check-input" onClick={props.handleDarkMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+              <label className="form-check-label light" htmlFor="flexSwitchCheckDefault"><b>Enable Dark Mode</b></label>
+            </div>
           </div>
         </div>
       </nav>

@@ -6,10 +6,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 
 const News = (props) => {
-    const [articles, setArticles] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [page, setPage] = useState(1)
-    const [totalResults, setTotalResults] = useState(0)
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [page, setPage] = useState(1);
+    const [totalResults, setTotalResults] = useState(0);
+
 
 
     const capitalizeFirstLetter = (string) => {
@@ -58,7 +59,7 @@ const News = (props) => {
 
     return (
         <>
-            <h2 className="text-center" style={{ margin: '35px 0px', 'marginTop': '90px' }}>
+            <h2 className="text-center" style={{ margin: '35px 0px', 'marginTop': '90px', color: props.mode === 'dark' ? 'white' : '#042743' }}>
                 NewsHunt - Top {capitalizeFirstLetter(props.category)} Headlines
             </h2>
             {loading && <Spinner />}
@@ -74,7 +75,7 @@ const News = (props) => {
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.url}>
                                 <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage}
-                                    newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                    newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                             </div>
                         })}
                     </div>
