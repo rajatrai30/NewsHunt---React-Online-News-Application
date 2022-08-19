@@ -1,7 +1,6 @@
-###Live Testing Demo of News App
+### `Live Demo of News App`
 
-https://user-images.githubusercontent.com/75417243/185682936-a8dab37e-bfaa-4c02-9146-5ed65e6d52f0.mp4
-
+https://user-images.githubusercontent.com/75417243/185683899-5687030c-0561-48e6-aa74-71438c0a5db1.mp4
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
